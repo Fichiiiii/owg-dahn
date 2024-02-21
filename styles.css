@@ -1,0 +1,424 @@
+html {
+    line-height: 150%;
+    font-size: 15px;
+}
+
+body {
+    background-image: url("https://owg-dahn.de/wordpress/wp-content/themes/OWG/images/test3_1.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-color: #728ea1;
+    background-size: 100%;
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+
+p {
+    color: #505050;
+    font-size: 17px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+@media (max-width: 800px) {
+    p {
+      font-size: 16px;
+    }
+}
+
+p a {
+    color: #179af0;
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 15px;
+    color: #41656f;
+}
+
+@media (max-width: 800px) {
+    h2 {
+      line-height: 25px;
+    }
+}
+
+h2 a {
+    text-decoration: none;
+    font-size: 35px;
+    line-height: 46px;
+    color: #41656f;
+    font-weight: 300;
+}
+
+@media (max-width: 800px) {
+    h2 a {
+      font-size: 30px;
+    }
+}
+
+a {
+    color: #728ea1;
+    text-decoration: none;
+}
+
+li a {
+    text-decoration: none;
+}
+
+span {
+    color: #505050;
+    font-size: 17px;
+    line-height: 25px !important;
+    font-weight: 300;
+}
+
+li span {
+    color: #888888;
+}
+
+#content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding: 0 25px;
+    box-sizing: border-box;
+    display: block;
+    transition: transform .5s;
+}
+
+@media (max-width: 980px) {
+    #content {
+      padding: 0;
+    }
+  }
+
+@media (max-width: 980px) {
+    #content {
+      padding: 0;
+    }
+}
+
+#header {
+    padding-top: 37px;
+}
+
+#navbar {
+    position: relative;
+    margin: 19px 0 40px;
+    text-align: center;
+    color: #4b5052;
+    display: block;
+}
+
+#logo {
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+@media (max-width: 800px) {
+    #logo {
+        margin-top: 29px;
+    }
+}
+
+#logoname {
+    color: #878787;
+    font-size: 17px;
+    margin: -5px 0px 0px 10px;
+}
+
+@media (max-width: 800px) {
+    #logoname {
+      font-size: 15px;
+      color: black;
+    }
+}
+
+#hauptmenu {
+    width: 100%;
+    margin: 10px 0px 40px 0px;
+    padding: 0;
+    list-style: none;
+}
+
+#menu {
+    width: 100%;
+    margin: 6px 0px 40px 0px;
+    float: left;
+    list-style: none;
+    padding: 0;
+}
+
+@media (max-width: 800px) {
+    #menu {
+      display: none;
+    }
+}
+
+#menu>li {
+    display: inline-block;
+    border: 2px solid transparent;
+    min-width: 80px;
+    position: relative;
+}
+
+#menu>li>a {
+    font-size: 20px;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    line-height: 36px;
+    padding: 0 10px;
+    height: 40px;
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 100px;
+    color: #333;
+    text-decoration: none;
+}
+
+#menu>li:hover {
+    border-color: rgba(75, 80, 82, 0.1);
+}
+
+#main {
+    width: 75%;
+    float: left;
+    margin-top: -21px;
+}
+
+@media (max-width: 900px) {
+    #main {
+      width: 70%;
+    }
+}
+
+@media (max-width: 800px) {
+    #main {
+      width: 100%;
+      margin-top: -15px;
+    }
+}
+
+.entry {
+    min-height: 100px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    padding: 1px 20px 5px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .entry {
+      margin-right: 0px;
+    }
+}
+
+.meta {
+    margin-top: -20px;
+    margin-bottom: -5px;
+}
+
+.meta p {
+    color: #888888;
+}
+
+.content {
+    text-align: left;
+    margin-top: 28px;
+}
+
+#sidebar {
+    width: 24%;
+    min-height: 500px;
+    float: left;
+    margin-top: -21px;
+    padding-bottom: 8px;
+}
+
+@media (max-width: 980px) {
+    #sidebar {
+      min-width: 215px;
+    }
+}
+
+@media (max-width: 900px) {
+    #sidebar {
+      width: 23%;
+    }
+}
+
+@media (max-width: 800px) {
+    #sidebar {
+      width: 100%;
+      margin: 5px 10px 0px 0px;
+    }
+}
+
+#sidebar li {
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    text-decoration: none;
+    list-style-type: none;
+    padding: 1px 15px 1px 0px;
+}
+
+@media (max-width: 800px) {
+    #sidebar > li {
+      box-shadow: 0px 1.3px 1.3px 1px #405d71;
+    }
+}
+
+.widget-title {
+    text-transform: uppercase;
+    font-size: 27px;
+    color: #41656f;
+    display: block;
+    padding: 30px 0px 10px 40px;
+    text-align: center;
+    margin-left: -35px;
+    font-weight: 300;
+}
+
+#searchform {
+    width: 200px;
+    height: 40px;
+    margin: 10px auto;
+    position: relative;
+    padding-left: 10px;
+}
+
+#search {
+    height: 20px;
+    width: 190px;
+}
+
+.cat-post-item {
+    list-style: none !important;
+    margin: 3px 0 10px !important;
+    padding: 3px 0 !important;
+}
+
+.cat-post-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding-bottom: 0 !important;
+}
+
+.cat-post-element {
+    margin: 5px 0 0 0;
+    clear: both;
+}
+
+#menu-links {
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+
+#menu-links a {
+    text-decoration: none;
+    color: #4b5052;
+    font-size: 17px;
+}
+
+#owg-text {
+    color: #000a04;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 800px) {
+    #owg-text {
+      display: block;
+    }
+}
+
+#owg-text a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#owg-text::before {
+    content: '';
+    background-size: contain;
+    margin: 17px 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#owg-text.notExpanded::before {
+    background-image: url('https://static-00.iconduck.com/assets.00/bars-icon-512x448-cn7tpkst.png');
+    width: 14px;
+    height: 11px;
+}
+
+#owg-text.isExpanded::before {
+    background-image: url('https://static-00.iconduck.com/assets.00/x-letter-icon-512x512-34aonjdc.png');
+    width: 12px;
+    height: 12px;
+}
+
+#shiftnav {
+    position: fixed;
+    top: 0;
+    width: 290px;
+    max-width: 95%;
+    height: 1000px;
+    background: #fff;
+    margin-top: -7px;
+    margin-left: -7px;
+    z-index: 5;
+    overscroll-behavior: contain;
+    transition: transform .5s;
+    box-sizing: border-box;
+    line-height: 1.3em;
+}
+
+#shiftnav {
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+}
+
+@media (max-width: 800px) {
+    #shiftnav {
+        visibility: visible;
+        opacity: 1;
+        overflow: visible;
+    }
+}
+
+#shiftnav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    top: auto;
+    left: auto;
+    float: none;
+    min-width: 0;
+}
+
+#shiftnav nav ul li a {
+    display: block;
+    padding: 15px 25px;
+    line-height: 1.6em;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    transition: .2s all ease;
+}
