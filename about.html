@@ -8,7 +8,7 @@
         <script src="script.js"></script>
     </head>
 
-    <body>
+    <body style="transform: translateX(0px);">
         <div id="content">
             <div id="header">
                 <nav id="navbar">
@@ -131,13 +131,13 @@
                     </div>
                 </li>
             </div>
-        </div>
-        <div id="owg-text">
-            <div>
-                <a href="https://owg-dahn.de">OWG Dahn</a>
+            <div id="owg-text" class="notExpanded" onclick="shiftnavbar()">
+                <div>
+                    <a href="https://owg-dahn.de">OWG Dahn</a>
+                </div>
             </div>
-        </div>
-        <div id="shiftnav">
+        </div>    
+        <div id="shiftnav" style="transform: translateX(-290px);">
             <nav>
                 <ul>
                     <li>
@@ -157,8 +157,6 @@
                     </li>
                 </ul>
             </nav>
-        <button id="close-shiftnav">
-            × Close Panel		</button>
         </div>
     </body>
 </html>
