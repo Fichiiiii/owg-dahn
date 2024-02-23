@@ -10,7 +10,6 @@ body {
     background-color: #728ea1;
     background-size: 100%;
     font-family: 'Lato', sans-serif;
-    overflow-x: hidden;
 }
 
 p {
@@ -74,6 +73,10 @@ span {
 
 li span {
     color: #888888;
+}
+
+#wrapper {
+    overflow-x: hidden;
 }
 
 #content {
