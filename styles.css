@@ -341,6 +341,7 @@ li span {
     font-size: 16px;
     cursor: pointer;
     display: none;
+    margin-top: -8px;
 }
 
 @media (max-width: 800px) {
