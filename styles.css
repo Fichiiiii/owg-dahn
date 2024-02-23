@@ -426,3 +426,16 @@ li span {
     cursor: pointer;
     transition: .2s all ease;
 }
+
+#fail {
+    background-color: white;
+    padding: 18px 0px 18px 15px;
+    margin-right: 15px;
+}
+
+@media (max-width: 800px) {
+    #fail {
+      margin-right: 0px;
+      margin-bottom: 10px;
+    }
+}
