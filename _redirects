@@ -1,2 +1,1 @@
-/api/contact/* /.netlify/functions/contact/:splat 200
-/api/entries/* /.netlify/functions/entries/:splat 200
+/api/* /.netlify/functions/:splat 200
