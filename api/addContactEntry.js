@@ -5,19 +5,19 @@ exports.handler = async (event, context) => {
 
       if (!requestData.startsWith("input=")) return {
         statusCode: 400,
-        body: JSON.stringify({ error: "Invalid Request Body" })
+        body: JSON.stringify({ message: "Invalid Request Body" })
       }
 
       const message = requestData.replace("input=", "")
 
       return {
         statusCode: 200,
-        body: JSON.stringify({ message: "Request processed successfully", message: message })
+        body: JSON.stringify({ message: "Request processed successfully", input: message })
       }
     } catch (error) {
       return {
         statusCode: 400,
-        body: JSON.stringify({ error: "Failed to process POST request" })
+        body: JSON.stringify({ message: "Failed to process POST request" })
       }
     }
   }
