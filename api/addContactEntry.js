@@ -9,10 +9,11 @@ exports.handler = async (event, context) => {
       }
 
       const message = requestData.replace("input=", "")
+      const input = decodeURIComponent(message.replaceAll('+', ' '))
 
       return {
         statusCode: 200,
-        body: JSON.stringify({ message: "Request processed successfully", input: message })
+        body: JSON.stringify({ message: "Request processed successfully", input: input })
       }
     } catch (error) {
       return {
