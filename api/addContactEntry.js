@@ -1,12 +1,8 @@
 exports.handler = async (event, context) => {
   if (event.httpMethod === 'POST') {
     try {
+      console.log(event.httpMethod)
       console.log(event)
-      
-      const requestBody = JSON.parse(event.body)
-
-      console.log(requestBody)
-
       return {
         statusCode: 200,
         body: JSON.stringify({ message: 'POST request processed successfully' }),
