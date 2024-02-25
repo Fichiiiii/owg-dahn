@@ -8,18 +8,6 @@ const client = createClient({
   }
 })
 
-async function dataExists(key) {
-  return new Promise((resolve, reject) => {
-    client.exists(key, (err, reply) => {
-      if (err) {
-        reject(err)
-      } else {
-        resolve(reply === 1)
-      }
-    })
-  })
-}
-
 async function getData(key) {
   return new Promise((resolve, reject) => {
     client.get(key, (err, reply) => {
@@ -66,7 +54,7 @@ exports.handler = async (event, context) => {
       const message = requestData.replace("input=", "")
       const input = decodeURIComponent(message.replaceAll('+', ' '))
 
-      let contactEntries = dataExists("contactEntries") ? JSON.parse(getData("contactEntries")) : []
+      let contactEntries = JSON.parse(getData("contactEntries")) ?? []
       contactEntries.push(input)
 
       await setEntry("contactEntries", contactEntries)
