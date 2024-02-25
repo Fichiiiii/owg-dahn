@@ -6,7 +6,7 @@ exports.handler = async (event, context) => {
         // Return the data as the response
         return {
           statusCode: 200,
-          body: JSON.stringify({message: "gay"}),
+          body: JSON.stringify({message: "gex"}),
         };
       } catch (error) {
         // Return an error response if there was an issue processing the request
