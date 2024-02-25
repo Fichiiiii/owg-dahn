@@ -1,11 +1,11 @@
 exports.handler = async (event, context) => {
   if (event.httpMethod === 'POST') {
     try {
-      const requestBody = JSON.parse(event.body)
+      //const requestBody = JSON.parse(event.body)
 
       return {
         statusCode: 200,
-        body: JSON.stringify({ message: JSON.stringify(requestBody) }),
+        body: JSON.stringify({ message: "foo" }),
       }
     } catch (error) {
       return {
