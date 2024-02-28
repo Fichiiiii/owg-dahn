@@ -1,4 +1,4 @@
-const redis = require('redis')
+/*const redis = require('redis')
 
 const client = createClient({
   password: 'process.env.REDIS_PASS',
@@ -70,4 +70,4 @@ exports.handler = async (event, context) => {
       }
     }
   }
-}
+}*/
