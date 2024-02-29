@@ -1,8 +1,8 @@
 const { MongoClient } = require("mongodb");
 
-const mongoClient = new MongoClient(process.env.MONGODB_URI);
+const mongoClient = new MongoClient(process.env.MONGODB_URI)
 
-mongoClient.connect();
+mongoClient.connect()
 
 const handler = async (event) => {
     try {
