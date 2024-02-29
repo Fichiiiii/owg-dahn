@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
       const message = requestData.replace("input=", "")
       const input = decodeURIComponent(message.replaceAll('+', ' '))
 
-      const envVar = process.env.TEST
+      const envVar = process.env.MONGODB_URI
 
       return {
         statusCode: 200,
