@@ -8,3 +8,25 @@ function shiftnavbar() {
     document.getElementById("owg-text").classList.toggle("notExpanded")
     document.getElementById("owg-text").classList.toggle("isExpanded")
 }
+
+function submitContactForm() {
+    const input = document.getElementById("contactInput").value
+
+    fetch('https://owg-dahn.com/api/addContactEntry', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: input
+    })
+    .then((response) => response.json())
+    .then(() => {
+        document.getElementById("contactInput").value = null
+        window.alert("Deine Nachricht wurde gesendet")
+    })
+    .catch(() => {
+        window.alert("Ein Fehler ist aufgetreten\nVersuche es später nochmal")
+    })
+
+    document.getElementById("contactInput").value = null
+}
