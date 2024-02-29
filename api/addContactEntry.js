@@ -8,14 +8,12 @@ const handler = async (event) => {
     try {
       const requestData = event.body
 
-      if (!requestData.startsWith("input=")) return {
+      if (requestData.length < 25) return {
         statusCode: 400,
         body: JSON.stringify({ message: "Invalid Request Body" })
       }
 
-      const message = requestData.replace("input=", "")
-      const input = decodeURIComponent(message.replaceAll('+', ' '))
-    
+      const input = decodeURIComponent(requestData.replaceAll('+', ' '))
       await mongoClient.db("contact").collection("messages").insertOne({ message: input })
 
         return {
