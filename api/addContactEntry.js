@@ -1,10 +1,5 @@
-const { MongoClient } = require("mongodb");
-
-const mongoClient = new MongoClient(process.env.MONGODB_URI);
-
-mongoClient.connect();
-
-const handler = async (event) => {
+exports.handler = async (event, context) => {
+  if (event.httpMethod === 'POST') {
     try {
       const requestData = event.body
 
@@ -15,16 +10,18 @@ const handler = async (event) => {
 
       const message = requestData.replace("input=", "")
       const input = decodeURIComponent(message.replaceAll('+', ' '))
-    
-      await client.db("contact").collection("messages").insertOne({ message: input })
 
-        return {
-            statusCode: 200,
-            body: JSON.stringify(results),
-        }
+      const envVar = process.env.TEST
+
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ message: "Request processed successfully", input: envVar })
+      }
     } catch (error) {
-        return { statusCode: 500, body: error.toString() }
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ message: "Failed to process POST request" })
+      }
     }
+  }
 }
-
-module.exports = { handler }
