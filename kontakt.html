@@ -36,7 +36,7 @@
                                         <a href="https://owg-dahn.com/kontakt">Kontakt</a>
                                     </li>
                                     <li>
-                                        <a href="https://github.com/Fichiiiii/owg-dahn">Sourcecode</a>
+                                        <a href="https://github.com/Fichiiiii/fichiiiii.github.io">Sourcecode</a>
                                     </li>
                                 </ul>
                             </div>
@@ -45,16 +45,15 @@
                 </div>
                 <div id="main">
                     <div class="entry">
-                        <h2><a href="https://owg-dahn.com/kontakt">Kontakt</a></h2>
+                        <h2><a href="/kontakt">Kontakt</a></h2>
                         <div class="meta"></div>
                         <div class="content">
                             <p style="margin-bottom: 0;">Wenn du einen Vorschlag oder ähnliches anonym einschicken willst, kannst du das über das folgende Textfeld machen:</p>
-                            <form action="/api/addContactEntry" method="post">
-                                <textarea name="input"></textarea>
-                                <input type="submit" value="Absenden">
-                            </form>
+                            <div id="form">
+                                <textarea id="contactInput" minlength="25" maxlength="500"></textarea>
+                                <button onclick="submitContactForm()">Absenden</button>
+                            </div>
                             <p>Wenn du willst, dass wir uns zurückmelden solltest du uns lieber eine E-Mail schreiben:<br>contact@owg-dahn.com</p>
-                            
                         </div>
                     </div>
                 </div>
@@ -159,7 +158,7 @@
                             <a href="https://owg-dahn.com/kontakt">Kontakt</a>
                         </li>
                         <li>
-                            <a href="https://github.com/Fichiiiii/owg-dahn">Sourcecode</a>
+                            <a href="https://github.com/Fichiiiii/fichiiiii.github.io">Sourcecode</a>
                         </li>
                     </ul>
                 </nav>
