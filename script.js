@@ -12,6 +12,8 @@ function shiftnavbar() {
 function submitContactForm() {
     const input = document.getElementById("contactInput").value
 
+    if (input.length < 25) return window.alert("Deine Nachricht muss mindestens 25 Zeichen lang sein")
+
     fetch('https://owg-dahn.com/api/addContactEntry', {
         method: 'POST',
         headers: {
@@ -27,6 +29,4 @@ function submitContactForm() {
     .catch(() => {
         window.alert("Ein Fehler ist aufgetreten\nVersuche es später nochmal")
     })
-
-    document.getElementById("contactInput").value = null
 }
