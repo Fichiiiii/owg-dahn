@@ -14,6 +14,11 @@ exports.handler = async (event) => {
         const queryParams = event.queryStringParameters
         const key = queryParams.key ?? ""
     
+        if (!key) return {
+            statusCode: 400,
+            body: JSON.stringify({ message: "Invalid Request Body" })
+        }
+
         const user = await mongoClient.db("accounts").collection("accountData").findOne({ key: key}, {})
         if (!user) return {
             statusCode: 400,
@@ -22,7 +27,7 @@ exports.handler = async (event) => {
 
         return {
             statusCode: 200,
-            body: JSON.stringify({ user })
+            body: JSON.stringify({ name: user.name, permissions: user.permissions })
         }
     } catch (error) {
         return { 
