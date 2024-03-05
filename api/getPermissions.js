@@ -18,7 +18,7 @@ exports.handler = async (event) => {
 
         return {
             statusCode: 200,
-            body: JSON.stringify({ name: user.name, perms: user.permitions })
+            body: JSON.stringify({ user })
         }
     } catch (error) {
         return { 
