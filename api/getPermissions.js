@@ -15,6 +15,10 @@ exports.handler = async (event) => {
         const key = queryParams.key ?? ""
     
         const user = await mongoClient.db("accounts").collection("accountData").findOne({ key: key}, {})
+        if (!user) return {
+            statusCode: 400,
+            body: JSON.stringify({ message: "User Not Found" })
+        }
 
         return {
             statusCode: 200,
