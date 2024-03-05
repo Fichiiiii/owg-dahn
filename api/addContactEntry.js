@@ -6,12 +6,12 @@ mongoClient.connect()
 
 const handler = async (event) => {
   try {
-    const requestData = event.body
-
     if (event.httpMethod != 'POST') return {
       statusCode: 405,
       body: JSON.stringify({ message: "Method Not Allowed" })
     }
+
+    const requestData = event.body
 
     if (requestData.length < 25) return {
       statusCode: 400,
