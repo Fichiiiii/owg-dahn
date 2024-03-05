@@ -2,7 +2,7 @@ exports.handler = async (event) => {
     try {
         const queryParams = event.queryStringParameters
     
-        const key = queryParams.key
+        const key = queryParams.key ?? ""
     
         return {
             statusCode: 200,
