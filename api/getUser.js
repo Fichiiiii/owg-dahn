@@ -25,9 +25,18 @@ exports.handler = async (event) => {
             body: JSON.stringify({ message: "User Not Found" })
         }
 
+        const permissionInteger = (user.permissions >>> 0).toString(2)
+
+        const permissions = {
+            addArticles: permissionInteger[0],
+            editArticles: permissionInteger[1],
+            viewContactEntries: permissionInteger[2],
+            configureAccounts: permissionInteger[3]
+        }
+
         return {
             statusCode: 200,
-            body: JSON.stringify({ name: user.name, permissions: user.permissions })
+            body: JSON.stringify({ key: user.key, name: user.name, permissions: permissions })
         }
     } catch (error) {
         return { 
