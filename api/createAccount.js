@@ -12,7 +12,7 @@ const handler = async (event) => {
     }
 
     const headers = event.headers
-    const authKey = headers['authorization'].key ?? ""
+    const authKey = headers['authorization'] ?? ""
 
     let permission = 0
 
