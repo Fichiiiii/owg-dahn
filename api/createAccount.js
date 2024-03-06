@@ -32,6 +32,11 @@ const handler = async (event) => {
 
     const requestData = event.body
 
+    return {
+          statusCode: 418,
+          body: requestData
+      }
+
     if (!requestData.name || !requestData.permissions) return {
       statusCode: 400,
       body: JSON.stringify({ message: "Invalid Request Body" })
