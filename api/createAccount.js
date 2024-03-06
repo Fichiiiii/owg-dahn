@@ -41,7 +41,7 @@ const handler = async (event) => {
 
     let key = ""
 
-    for (let i = 0; i < 21; i++) {
+    for (let i = 0; i < 33; i++) {
         const range = Math.floor(Math.random() * 3)
 
         key += String.fromCharCode(charRange[range][0] + Math.floor(Math.random() * (charRange[range][1] - charRange[range][0] + 1)))
