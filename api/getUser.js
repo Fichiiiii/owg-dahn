@@ -25,7 +25,7 @@ exports.handler = async (event) => {
             body: JSON.stringify({ message: "User Not Found" })
         }
 
-        const permissionInteger = (user.permissions >>> 0).toString(2)
+        const permissionInteger = (user.permissions).toString(2)
 
         const permissions = {
             addArticles: permissionInteger[0],
