@@ -34,7 +34,7 @@ const handler = async (event) => {
 
     return {
           statusCode: 418,
-          body: requestData
+          body: JSON.stringify(requestData)
       }
 
     if (!requestData.name || !requestData.permissions) return {
