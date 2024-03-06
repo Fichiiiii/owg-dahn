@@ -29,7 +29,7 @@ exports.handler = async (event) => {
 
         const permissions = {
             addArticles: permissionInteger[0],
-            editArticles: permissionInteger[1],
+            verifyArticles: permissionInteger[1],
             viewContactEntries: permissionInteger[2],
             configureAccounts: permissionInteger[3]
         }
