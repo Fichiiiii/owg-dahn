@@ -30,7 +30,7 @@ const handler = async (event) => {
         body: JSON.stringify({ message: "Unauthorized Request" })
     }
 
-    const requestData = event.body
+    const requestData = JSON.parse(event.body)
 
     return {
           statusCode: 418,
