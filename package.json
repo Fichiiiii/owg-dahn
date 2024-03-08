@@ -4,7 +4,7 @@
   "description": "",
   "main": "",
   "author": "",
-  "license": "MIT",
+  "license": "GNU",
   "dependencies": {
     "dotenv": "^16.4.5",
     "mongodb": "^6.3.0"
