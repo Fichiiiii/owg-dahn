@@ -16,7 +16,7 @@ const handler = async (event) => {
 
     return { 
         statusCode: 200, 
-        body: key.toString()
+        body: key
       }
   } catch (error) {
     return { 
