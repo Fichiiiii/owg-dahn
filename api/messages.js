@@ -16,7 +16,7 @@ const handler = async (event) => {
 
     if (!authKey) return {
         statusCode: 401,
-        body: JSON.stringify({ message: "Missing Authorization" })
+        body: JSON.stringify({ message: "Missing Authorization Token" })
     }
 
     let permission = 0
@@ -35,9 +35,11 @@ const handler = async (event) => {
         body: JSON.stringify({ message: "Unauthorized Request" })
     }
 
+    const contactEntries = mongoClient.db("contact").collection("messages").find({})
+
     return {
         statusCode: 200,
-        body: JSON.stringify({ message: "u good" })
+        body: JSON.stringify({ entries: typeof contactEntries })
     }
 
   } catch (error) {
