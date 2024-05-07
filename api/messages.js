@@ -12,12 +12,34 @@ const handler = async (event) => {
     }
 
     const queryParams = event.queryStringParameters
-    const key = queryParams.key ?? ""
+    const authKey = queryParams.auth ?? ""
 
-    return { 
-        statusCode: 200, 
-        body: JSON.stringify({ message: key })
-      }
+    if (!authKey) return {
+        statusCode: 401,
+        body: JSON.stringify({ message: "Missing Authorization" })
+    }
+
+    let permission = 0
+
+    await fetch(`https://owg-dahn.com/api/getUser?key=${authKey}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(r => {return r.json()})
+    .then(data => permission = data.permissions)
+
+    if (!permission?.viewContactEntries) return {
+        statusCode: 401,
+        body: JSON.stringify({ message: "Unauthorized Request" })
+    }
+
+    return {
+        statusCode: 200,
+        body: JSON.stringify({ message: "u good" })
+    }
+
   } catch (error) {
     return { 
       statusCode: 500, 
