@@ -16,7 +16,7 @@ const handler = async (event) => {
 
     return { 
         statusCode: 200, 
-        body: key
+        body: JSON.stringify({ message: key })
       }
   } catch (error) {
     return { 
