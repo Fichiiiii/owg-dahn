@@ -39,7 +39,7 @@ const handler = async (event) => {
 
     return {
         statusCode: 200,
-        body: JSON.stringify({ entries: typeof contactEntries })
+        body: JSON.stringify({ entries: (await contactEntries.toArray()).join("\n") })
     }
 
   } catch (error) {
