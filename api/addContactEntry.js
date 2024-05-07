@@ -19,7 +19,7 @@ const handler = async (event) => {
     }
 
     const input = decodeURIComponent(requestData.replaceAll('+', ' '))
-    await mongoClient.db("contact").collection("messages").insertOne({ message: input })
+    await mongoClient.db("contact").collection("messages").insertOne({ message: input, timestamp: Date.now() })
 
     return {
       statusCode: 200,
