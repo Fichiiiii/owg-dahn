@@ -15,7 +15,7 @@ const handler = async (event) => {
     const authKey = queryParams.auth ?? ""
 
     if (!authKey) return {
-        statusCode: 401,
+        statusCode: 400,
         body: JSON.stringify({ message: "Missing Authorization Token" })
     }
 
