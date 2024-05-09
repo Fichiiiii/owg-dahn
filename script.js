@@ -41,12 +41,12 @@ async function fetchInbox() {
     }).then(r => { return r.json() })
 
     if (!entriesResponse.ok) {
-        return console.warn(entries.status)
+        return console.warn(entriesResponse.status)
     }
 
     const entries = (await entriesResponse.json()).entries
 
-    document.addEventListener("DOMContentLoaded", function(event) { 
+    document.addEventListener("DOMContentLoaded", function() { 
         entries.forEach(entry => {
             const post = document.createElement("div")
             post.classList.add("entry")
