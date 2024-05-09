@@ -33,7 +33,7 @@ function submitContactForm() {
 
 async function fetchInbox() {
     const auth = prompt("Gib deinen Authentifikationsschlüssel ein")
-    const entriesResponse = await fetch(`https://owg-dahn.com/api/getMessages?auth=${auth}`, {
+    /* const entriesResponse = await fetch(`https://owg-dahn.com/api/getMessages?auth=${auth}`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json'
@@ -42,11 +42,17 @@ async function fetchInbox() {
 
     if (!entriesResponse.ok) {
         return console.warn(entriesResponse.status)
-    }
+    } */
 
-    const entries = (await entriesResponse.json()).entries
+    //const entries = (await entriesResponse.json()).entries
+
+    const entries = [
+        { timestamp: 0, message: "Lorem Ipsum" },
+        { timestamp: 170232327, message: "Hello World"}
+    ]
 
     document.addEventListener("DOMContentLoaded", function() { 
+        document.getElementById("fail").remove()
         entries.forEach(entry => {
             const post = document.createElement("div")
             post.classList.add("entry")
