@@ -1,7 +1,8 @@
 const statusMessages = {
     "400": "Bad Request",
     "401": "Unauthorized",
-    "405": "Method not Allowed",
+    "405": "Method Not Allowed",
+    "414": "URI Too Long",
     "500": "Internal Server Error",
     "502": "Bad Gateway",
     "503": "Service Unavailable",
