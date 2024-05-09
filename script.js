@@ -44,7 +44,29 @@ async function fetchInbox() {
         return console.warn(entries.status)
     }
 
-    const entries = await entriesResponse.json().then(() => {
-        console.log(entries)
+    const entries = (await entriesResponse.json()).entries
+
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        entries.forEach(entry => {
+            const post = document.createElement("div")
+            post.classList.add("entry")
+    
+            const meta = document.createElement("div")
+            const date = document.createElement("p")
+            date.style.margin = "5px"
+            date.innerText = `Erstellt am: ${entry.timestamp}`
+            meta.append(date)
+    
+            const content = document.createElement("div")
+            const message = document.createElement("p")
+            content.style.textAlign = "left"
+            content.style.marginTop = "-15px"
+            message.innerText = entry.message
+    
+            post.append(meta)
+            post.append(content)
+    
+            document.getElementById("main").append(post)
+        })
     })
 }
