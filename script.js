@@ -123,6 +123,7 @@ async function fetchInbox() {
             const info = document.createElement("div")
             info.style.aspectRatio = "1 / 1"
             info.style.width = "5%"
+            info.style.marginInline = "10px"
             const infoIcon = document.createElement("img")
             infoIcon.src = "https://img.icons8.com/?size=128&id=7695&format=png"
             infoIcon.style.width = "100%"
@@ -133,7 +134,7 @@ async function fetchInbox() {
             const trash = document.createElement("div")
             trash.style.aspectRatio = "1 / 1"
             trash.style.width = "5%"
-            trash.append(document.createElement("p"))
+            trash.style.marginInline = "10px"
             const trashIcon = document.createElement("img")
             trashIcon.src = "https://img.icons8.com/?size=128&id=11767&format=png"
             trashIcon.style.width = "100%"
