@@ -44,7 +44,7 @@ async function fetchInbox() {
         return console.warn(entries.status)
     }
 
-    await entriesResponse.json().then(entries => {
+    const entries = await entriesResponse.json().then(() => {
         console.log(entries)
     })
 }
