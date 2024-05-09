@@ -116,39 +116,29 @@ async function fetchInbox() {
             message.innerText = entry.message
             content.append(message)
 
-            const options = document.createElement("div")
-            options.style.display = "flex"
-            options.style.justifyContent = "flex-end"
+            const menuContainer = document.createElement("div")
+            menuContainer.id = "menuContainer"
 
-            const info = document.createElement("div")
-            info.style.aspectRatio = "1 / 1"
-            info.style.width = "5%"
-            info.style.marginInline = "10px"
+            const infoContainer = document.createElement("div")
+            infoContainer.classList.add("optionContainer")
             const infoIcon = document.createElement("img")
+            infoIcon.classList.add("optionIcon")
             infoIcon.src = "https://img.icons8.com/?size=128&id=7695&format=png"
-            infoIcon.style.width = "100%"
-            infoIcon.style.height = "auto"
-            infoIcon.style.objectFit = "cover"
-            info.append(infoIcon)
+            infoContainer.append(infoIcon)
 
-            const trash = document.createElement("div")
-            trash.style.aspectRatio = "1 / 1"
-            trash.style.width = "5%"
-            trash.style.marginInline = "10px"
+            const trashContainer = document.createElement("div")
+            trashContainer.classList.add("optionContainer")
             const trashIcon = document.createElement("img")
+            trashIcon.classList.add("optionIcon")
             trashIcon.src = "https://img.icons8.com/?size=128&id=11767&format=png"
-            trashIcon.style.width = "100%"
-            trashIcon.style.height = "auto"
-            trashIcon.style.objectFit = "cover"
-            trash.append(trashIcon)
+            trashContainer.append(trashIcon)
 
-            options.append(info)
-            options.append(trash)
+            menuContainer.append(infoContainer)
+            menuContainer.append(trashContainer)
 
-    
             post.append(meta)
             post.append(content)
-            post.append(options)
+            post.append(menuContainer)
     
             document.getElementById("main").append(post)
         })

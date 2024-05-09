@@ -463,3 +463,21 @@ li span {
       margin-bottom: 10px;
     }
 }
+
+#menuContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.optionContainer {
+    aspect-ratio: 1 / 1;
+    width: 5%;
+    margin-inline: 10px;
+    cursor: pointer;
+}
+
+.optionIcon{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
