@@ -54,10 +54,13 @@ async function fetchInbox() {
             const post = document.createElement("div")
             post.classList.add("entry")
     
+            const time = new Date(entry.timestamp)
+            const months = [ "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" ]
+
             const meta = document.createElement("div")
             const date = document.createElement("p")
             date.style.margin = "5px"
-            date.innerText = `Erstellt am: ${entry.timestamp}`
+            date.innerText = `Erstellt am: ${time.getDate()}. ${months[time.getMonth()]} ${time.getFullYear()}`
             meta.append(date)
     
             const content = document.createElement("div")
@@ -73,6 +76,6 @@ async function fetchInbox() {
             document.getElementById("main").append(post)
         })
     }   
-    
+
     loadEntries()
 }
