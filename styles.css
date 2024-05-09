@@ -476,6 +476,15 @@ li span {
     cursor: pointer;
 }
 
+@media (max-width: 800px) {
+    .optionContainer {
+        aspect-ratio: 1 / 1;
+        width: 12%;
+        margin-inline: 10px;
+        cursor: pointer;
+    }
+}
+
 .optionIcon{
     width: 100%;
     height: auto;
