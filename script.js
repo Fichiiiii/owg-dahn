@@ -41,7 +41,24 @@ async function fetchInbox() {
     }).then(r => { return r })
 
     if (!entriesResponse.ok) {
-        return console.warn(entriesResponse.status)
+        document.getElementById("temp-entry").remove()
+
+        const post = document.createElement("div")
+        post.id = "fail"
+
+        const statusMessage = entriesResponse.json()
+
+        const heading = document.createElement("h2")
+        heading.innerText = `${entriesResponse.status} - ${statusMessage.message}`
+        post.append(heading)
+
+        const content = document.createElement("p")
+        content.innerText = "Tut mir Leid, aber beim Abrufen der Nachrichten ist ein Fehler aufgetreten."
+        post.append(content)
+
+        document.getElementById("main").append(post)
+
+        return
     }
 
     const entries = (await entriesResponse.json()).entries
@@ -49,7 +66,7 @@ async function fetchInbox() {
     function loadEntries() {
         if (document.readyState == "loading") return loadEntries()
 
-        document.getElementById("fail").remove()
+        document.getElementById("temp-entry").remove()
         entries.forEach(entry => {
             const post = document.createElement("div")
             post.classList.add("entry")
