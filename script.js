@@ -58,8 +58,6 @@ async function fetchInbox() {
         const post = document.createElement("div")
         post.id = "fail"
 
-        const statusMessage = entriesResponse.json()
-
         const heading = document.createElement("h2")
         heading.innerText = `${entriesResponse.status} - ${statusMessages[entriesResponse.status]}`
         post.append(heading)
@@ -74,6 +72,25 @@ async function fetchInbox() {
     }
 
     const entries = (await entriesResponse.json()).entries
+
+    if (!entries.length) {
+        document.getElementById("temp-entry").remove()
+
+        const post = document.createElement("div")
+        post.id = "fail"
+
+        const heading = document.createElement("h2")
+        heading.innerText = `Keine Nachrichten`
+        post.append(heading)
+
+        const content = document.createElement("p")
+        content.innerText = "Hier gibts derzeit nichts zu sehen"
+        post.append(content)
+
+        document.getElementById("main").append(post)
+
+        return
+    }
 
     function loadEntries() {
         if (document.readyState == "loading") return loadEntries()
