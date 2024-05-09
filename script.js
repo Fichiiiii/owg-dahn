@@ -30,3 +30,13 @@ function submitContactForm() {
         window.alert("Ein Fehler ist aufgetreten\nVersuche es später nochmal")
     })
 }
+
+async function fetchInbox() {
+    const auth = prompt("Gib deinen Authentifikationsschlüssel ein")
+    const entries = await fetch(`https://owg-dahn.com/api/getMessages?auth=${auth}`, {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json'
+        } 
+    }).then(r => { return r.json() })
+}
