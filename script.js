@@ -62,6 +62,7 @@ async function fetchInbox() {
             content.style.textAlign = "left"
             content.style.marginTop = "-15px"
             message.innerText = entry.message
+            content.append(message)
     
             post.append(meta)
             post.append(content)
