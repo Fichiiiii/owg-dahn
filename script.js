@@ -1,3 +1,14 @@
+const statusMessages = {
+    "400": "Bad Request",
+    "401": "Unauthorized",
+    "405": "Method not Allowed",
+    "500": "Internal Server Error",
+    "502": "Bad Gateway",
+    "503": "Service Unavailable",
+    "504": "Gateway Timeout",
+    "505": "HTTP Version Not Supported"
+}
+
 function shiftnavbar() {
     const navTransform = document.getElementById("shiftnav").style.transform
     const isExpanded = navTransform == "translateX(0px)"
@@ -49,11 +60,11 @@ async function fetchInbox() {
         const statusMessage = entriesResponse.json()
 
         const heading = document.createElement("h2")
-        heading.innerText = `${entriesResponse.status} - ${statusMessage.message}`
+        heading.innerText = `${entriesResponse.status} - ${statusMessages[entriesResponse.status]}`
         post.append(heading)
 
         const content = document.createElement("p")
-        content.innerText = "Tut mir Leid, aber beim Abrufen der Nachrichten ist ein Fehler aufgetreten."
+        content.innerText = "Beim Abrufen der Nachrichten ist ein Fehler aufgetreten."
         post.append(content)
 
         document.getElementById("main").append(post)
