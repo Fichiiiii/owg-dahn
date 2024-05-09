@@ -38,7 +38,7 @@ async function fetchInbox() {
         headers: {
             'Content-Type': 'application/json'
         } 
-    }).then(r => { return r.json() })
+    }).then(r => { return r })
 
     if (!entriesResponse.ok) {
         return console.warn(entriesResponse.status)
