@@ -47,6 +47,7 @@ async function fetchInbox() {
     const entries = (await entriesResponse.json()).entries
 
     document.addEventListener("DOMContentLoaded", function() { 
+        console.log("TEST")
         document.getElementById("fail").remove()
         entries.forEach(entry => {
             const post = document.createElement("div")
