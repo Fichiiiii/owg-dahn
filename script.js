@@ -46,8 +46,9 @@ async function fetchInbox() {
 
     const entries = (await entriesResponse.json()).entries
 
-    document.addEventListener("DOMContentLoaded", function() { 
-        console.log("TEST")
+    function loadEntries() {
+        if (document.readyState == "loading") return loadEntries()
+
         document.getElementById("fail").remove()
         entries.forEach(entry => {
             const post = document.createElement("div")
@@ -71,5 +72,7 @@ async function fetchInbox() {
     
             document.getElementById("main").append(post)
         })
-    })
+    }   
+    
+    loadEntries()
 }
