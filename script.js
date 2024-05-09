@@ -115,9 +115,27 @@ async function fetchInbox() {
             content.style.marginTop = "-15px"
             message.innerText = entry.message
             content.append(message)
+
+            const options = document.createElement("div")
+            options.style.display = "flex"
+            options.style.justifyContent = "flex-end"
+
+            const info = document.createElement("div")
+            info.style.aspectRatio = "1 / 1"
+            info.style.width = "5%"
+            info.append(document.createElement("p"))
+            const trash = document.createElement("div")
+            trash.style.aspectRatio = "1 / 1"
+            trash.style.width = "5%"
+            trash.append(document.createElement("p"))
+
+            options.append(info)
+            options.append(trash)
+
     
             post.append(meta)
             post.append(content)
+            post.append(options)
     
             document.getElementById("main").append(post)
         })
