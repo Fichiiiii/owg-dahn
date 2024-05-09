@@ -33,10 +33,18 @@ function submitContactForm() {
 
 async function fetchInbox() {
     const auth = prompt("Gib deinen Authentifikationsschlüssel ein")
-    const entries = await fetch(`https://owg-dahn.com/api/getMessages?auth=${auth}`, {
+    const entriesResponse = await fetch(`https://owg-dahn.com/api/getMessages?auth=${auth}`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json'
         } 
     }).then(r => { return r.json() })
+
+    if (!entriesResponse.ok) {
+        return console.warn(entries.status)
+    }
+
+    const entries = await entriesResponse.json()
+
+    console.log(entries)
 }
