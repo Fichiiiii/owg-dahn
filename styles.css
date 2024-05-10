@@ -493,9 +493,9 @@ li span {
 }
 
 #infoContainer:hover {
-    filter: invert(30%) sepia(60%) saturate(800%) hue-rotate(220deg) brightness(100%) contrast(150%);
+    filter: invert(40%) sepia(100%) saturate(500%) hue-rotate(190deg) brightness(80%) contrast(250%);
 }
 
 #trashContainer:hover {
-    filter: invert(42%) sepia(45%) saturate(1209%) hue-rotate(230deg) brightness(83%) contrast(112%);
+    filter: invert(40%) sepia(175%) saturate(500%) hue-rotate(310deg) brightness(75%) contrast(200%);
 }
