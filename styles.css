@@ -491,3 +491,11 @@ li span {
     object-fit: cover;
     filter: opacity(0.75);
 }
+
+#infoContainer:hover {
+    filter: invert(30%) sepia(60%) saturate(800%) hue-rotate(220deg) brightness(100%) contrast(150%);
+}
+
+#trashContainer:hover {
+    filter: invert(42%) sepia(45%) saturate(1209%) hue-rotate(230deg) brightness(83%) contrast(112%);
+}

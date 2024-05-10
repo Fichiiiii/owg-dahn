@@ -121,6 +121,7 @@ async function fetchInbox() {
 
             const infoContainer = document.createElement("div")
             infoContainer.classList.add("optionContainer")
+            infoContainer.id = "infoContainer"
             const infoIcon = document.createElement("img")
             infoIcon.classList.add("optionIcon")
             infoIcon.src = "https://img.icons8.com/?size=128&id=7695&format=png"
@@ -128,6 +129,7 @@ async function fetchInbox() {
 
             const trashContainer = document.createElement("div")
             trashContainer.classList.add("optionContainer")
+            trashContainer.id = "trashContainer"
             const trashIcon = document.createElement("img")
             trashIcon.classList.add("optionIcon")
             trashIcon.src = "https://img.icons8.com/?size=128&id=11767&format=png"
