@@ -45,7 +45,7 @@ function submitContactForm() {
 
 async function fetchInbox() {
     const auth = prompt("Gib deinen Authentifikationsschlüssel ein")
-    const entriesResponse = await fetch(`https://owg-dahn.com/api/getMessages?auth=${auth}`, {
+    const entriesResponse = await fetch(`https://owg-dahn.com/api/getContactEntries?auth=${auth}`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json'
