@@ -155,6 +155,21 @@ async function fetchInbox() {
                     setTimeout(() => {
                         window.alert("Die Nachricht wurde gelöscht")
                     }, 0)
+
+                    if (!document.getElementById("main").childElementCount) {
+                        const post = document.createElement("div")
+                        post.id = "fail"
+
+                        const heading = document.createElement("h2")
+                        heading.innerText = `Keine Nachrichten`
+                        post.append(heading)
+
+                        const content = document.createElement("p")
+                        content.innerText = "Hier gibts derzeit nichts zu sehen"
+                        post.append(content)
+
+                        document.getElementById("main").append(post)
+                    }
                 })
             })
 
