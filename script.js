@@ -142,7 +142,7 @@ async function fetchInbox() {
             trashContainer.append(trashIcon)
 
             trashContainer.addEventListener("click", () => {
-                fetch('https://owg-dahn.com/api/deleteContactEntry', {
+                fetch('https://owg-dahn.com/api/removeContactEntry', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
