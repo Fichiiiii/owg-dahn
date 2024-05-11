@@ -129,7 +129,7 @@ async function fetchInbox() {
             infoContainer.append(infoIcon)
 
             infoContainer.addEventListener("click", () => {
-                console.log("a")
+                alert(`Id: "${entry._id}"\nMessage: "${entry.message}"\nTimestamp: ${entry.timestamp}`)
             })
 
             const trashContainer = document.createElement("div")
