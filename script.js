@@ -128,6 +128,10 @@ async function fetchInbox() {
             infoIcon.src = "https://img.icons8.com/?size=128&id=7695&format=png"
             infoContainer.append(infoIcon)
 
+            infoContainer.addEventListener("click", () => {
+                console.log("a")
+            })
+
             const trashContainer = document.createElement("div")
             trashContainer.classList.add("optionContainer")
             trashContainer.id = "trashContainer"
@@ -135,6 +139,10 @@ async function fetchInbox() {
             trashIcon.classList.add("optionIcon")
             trashIcon.src = "https://img.icons8.com/?size=128&id=11767&format=png"
             trashContainer.append(trashIcon)
+
+            trashContainer.addEventListener("click", () => {
+                console.log("b")
+            })
 
             menuContainer.append(infoContainer)
             menuContainer.append(trashContainer)
