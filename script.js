@@ -152,6 +152,7 @@ async function fetchInbox() {
                     if (!response.ok) return window.alert("Ein Fehler ist aufgetreten\nVersuche es später nochmal oder lade die Nachrichten neu") 
 
                     document.getElementById(entry._id).remove()
+                    window.alert("Die Nachricht wurde gelöscht")
                 })
             })
 
