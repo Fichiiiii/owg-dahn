@@ -72,6 +72,7 @@ async function fetchInbox() {
     }
 
     const entries = (await entriesResponse.json()).entries
+    entries.reverse()
 
     if (!entries.length) {
         document.getElementById("temp-entry").remove()
