@@ -152,9 +152,6 @@ async function fetchInbox() {
                     if (!response.ok) return window.alert("Ein Fehler ist aufgetreten\nVersuche es später nochmal oder lade die Nachrichten neu") 
 
                     document.getElementById(entry._id).remove() 
-                    setTimeout(() => {
-                        window.alert("Die Nachricht wurde gelöscht")
-                    }, 0)
 
                     if (!document.getElementById("main").childElementCount) {
                         const post = document.createElement("div")
@@ -170,6 +167,10 @@ async function fetchInbox() {
 
                         document.getElementById("main").append(post)
                     }
+
+                    setTimeout(() => {
+                        window.alert("Die Nachricht wurde gelöscht")
+                    }, 0)
                 })
             })
 
