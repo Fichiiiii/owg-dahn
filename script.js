@@ -147,7 +147,7 @@ async function fetchInbox() {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: "663f3c2a131aedcc103b9620"
+                    body: entry._id
                 }).then(response => {
                     if (!response.ok) return window.alert("Ein Fehler ist aufgetreten\nVersuche es später nochmal oder lade die Nachrichten neu") 
 
