@@ -100,6 +100,7 @@ async function fetchInbox() {
         entries.forEach(entry => {
             const post = document.createElement("div")
             post.classList.add("entry")
+            post.id = entry._id
     
             const time = new Date(entry.timestamp)
             const months = [ "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" ]
@@ -129,7 +130,7 @@ async function fetchInbox() {
             infoContainer.append(infoIcon)
 
             infoContainer.addEventListener("click", () => {
-                alert(`Id: "${entry._id}"\nMessage: "${entry.message}"\nTimestamp: ${entry.timestamp}`)
+                alert(`Id: ${entry._id}\nMessage: ${entry.message}\nTimestamp: ${entry.timestamp}`)
             })
 
             const trashContainer = document.createElement("div")
@@ -141,7 +142,17 @@ async function fetchInbox() {
             trashContainer.append(trashIcon)
 
             trashContainer.addEventListener("click", () => {
-                console.log("b")
+                fetch('https://owg-dahn.com/api/deleteContactEntry', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: "663f3c2a131aedcc103b9620"
+                }).then(response => {
+                    if (!response.ok) return window.alert("Ein Fehler ist aufgetreten\nVersuche es später nochmal oder lade die Nachrichten neu") 
+
+                    document.getElementById(entry._id).remove()
+                })
             })
 
             menuContainer.append(infoContainer)
