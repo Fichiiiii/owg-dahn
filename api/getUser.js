@@ -19,7 +19,7 @@ exports.handler = async (event) => {
             body: JSON.stringify({ message: "Invalid Request Body" })
         }
 
-        const user = await mongoClient.db("accounts").collection("accountData").findOne({ key: key}, {})
+        const user = await mongoClient.db("accounts").collection("accountData").findOne({ key: key }, {})
         if (!user) return {
             statusCode: 400,
             body: JSON.stringify({ message: "User Not Found" })
