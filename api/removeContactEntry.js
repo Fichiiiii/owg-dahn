@@ -18,13 +18,14 @@ const handler = async (event) => {
       body: JSON.stringify({ message: "Invalid Request Body" })
     }
 
-    const entry = await mongoClient.db("contact").collection("messages").findOne(ObjectId(requestData))
+    const id = new ObjectId(requestData)
+    const entry = await mongoClient.db("contact").collection("messages").findOne(id)
     if (!entry) return {
         statusCode: 400,
         body: JSON.stringify({ message: "Entry does not exist" })
     }
 
-    mongoClient.db("contact").collection("messages").deleteOne(ObjectId(requestData))
+    mongoClient.db("contact").collection("messages").deleteOne(entry._id)
 
     return {
       statusCode: 200,
