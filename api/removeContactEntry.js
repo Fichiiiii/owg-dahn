@@ -25,7 +25,7 @@ const handler = async (event) => {
         body: JSON.stringify({ message: "Entry does not exist" })
     }
 
-    mongoClient.db("contact").collection("messages").deleteOne(entry._id)
+    await mongoClient.db("contact").collection("messages").deleteOne({ "_id": id })
 
     return {
       statusCode: 200,
